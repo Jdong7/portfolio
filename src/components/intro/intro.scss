@@ -1,3 +1,11 @@
-.intro{
-    background-color: lightpink;
+.intro {
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  .left {
+    flex: 0.5;
+  }
+  .right {
+    flex: 0.5;
+  }
 }
