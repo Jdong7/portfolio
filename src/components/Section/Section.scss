@@ -1,0 +1,16 @@
+.Section{
+    display: flex;
+}
+.slide-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.swiperCarousel{
+    display: flex;
+    width: 90%;
+    height: 100%;
+   margin: auto;
+}
