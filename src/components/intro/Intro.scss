@@ -1,0 +1,142 @@
+@import "../../mixins.scss";
+.Intro {
+  padding-top: 100px;
+  background-color: whitesmoke;
+}
+.Intro * {
+  //-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  border: 2px solid red;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+}
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imgBorder {
+  padding: 20px;
+  background-color: var(--MidBlue);
+  border-radius: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.Intro img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+  @include sm-down {
+    width: 270px;
+    height: 270px;
+  }
+}
+.text1 {
+  font-family: "Source Code Pro", monospace;
+  margin-top: 31px;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--MidBlue);
+  @include sm-down {
+    display: none;
+  }
+}
+.text2 {
+  font-family: "Source Code Pro", monospace;
+  margin-top: 11px;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--MidBlue);
+}
+.text3 {
+  font-family: "Source Code Pro", monospace;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--MidBlue);
+}
+.text3 span {
+  color: var(--Oranges);
+}
+.arrow {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 10px;
+  display: flex;
+  font-size: 40px;
+  align-items: center;
+  color: var(--UmberBrown);
+  animation: bounce 1.5s ease-out infinite;
+  font-stretch: extra-expanded;
+}
+.chev {
+  margin-top: auto;
+}
+.Intro-socials {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.icons {
+  border: 1px solid var(--MidBlue);
+  border-radius: 16px;
+  margin: 20px;
+  padding: 5px 10px 5px 10px;
+  color: var(--MidBlue);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+.icons:hover {
+  color: var(--Oranges);
+}
+.ig {
+  font-size: 44px;
+}
+.git {
+  font-size: 44px;
+}
+.linkedin {
+  font-size: 44px;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}

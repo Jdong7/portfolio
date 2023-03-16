@@ -1,7 +1,7 @@
 import './App.scss'
-import { Intro } from './Components/Intro/Intro'
-import { Section } from './Components/Section/Section'
-import { Topbar } from './Components/Topbar/Topbar'
+import { Intro } from './components/intro/Intro'
+import { Section } from './components/section/Section'
+import { Topbar } from './components/topbar/Topbar'
 
 function App() {
 
