@@ -47,7 +47,6 @@ const Topbar = () => {
           <div className="item" onClick={toggle}>
             <p><a href="#Contact">Contact</a></p>
           </div>
-       
       </div>
     </div>
   );

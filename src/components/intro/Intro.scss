@@ -6,7 +6,7 @@
 .Intro * {
   //-webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
-  border: 2px solid red;
+  //border: 2px solid red;
 }
 .wrapper {
   display: flex;
@@ -111,7 +111,7 @@
   transition: color 0.5s ease-in-out;
 }
 .icons:hover {
-  color: var(--Oranges);
+  color: $Oranges;
 }
 .ig {
   font-size: 44px;
