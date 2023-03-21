@@ -29,6 +29,9 @@
   justify-content: center;
   display: flex;
   align-items: center;
+  @include sm-down {
+    padding: 10px;
+  }
 }
 .Intro img {
   border-radius: 50%;
@@ -45,8 +48,8 @@
   image-rendering: -webkit-optimize-contrast;
   -ms-interpolation-mode: nearest-neighbor;
   @include sm-down {
-    width: 270px;
-    height: 270px;
+    width: 220px;
+    height: 220px;
   }
 }
 .text1 {
@@ -67,6 +70,9 @@
   font-size: 40px;
   font-weight: 600;
   color: var(--MidBlue);
+  @include sm-down {
+    font-size: 32px;
+  }
 }
 .text3 {
   font-family: "Source Code Pro", monospace;
