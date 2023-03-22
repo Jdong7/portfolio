@@ -65,7 +65,7 @@ const Section = () => {
           <SwiperSlide>
             <div className="slide-section">
               <div className="slide-wrapper">
-                <div className="title-section">PROJECTS</div>
+                <div className="title-section">TECHNOLOGIES</div>
                 <div className="icon-section">
                   <div
                     className="stack-icons"

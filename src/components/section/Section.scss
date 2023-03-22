@@ -2,17 +2,19 @@
 .Section {
   display: flex;
   background-color: whitesmoke;
-  //width: 100%;
+  width: 100%;
+  height: calc(100vh - 100px);
 }
 * {
   //border: 1px solid red;
 }
 .slide-section {
   display: flex;
-  padding-top: 100px;
+  //padding-top: 100px;
   width: 100%;
   height: 100%;
   align-items: center;
+  //justify-content: center;
   //margin-top: 100px;
 }
 .swiperCarousel {
@@ -30,12 +32,17 @@
 }
 .slide-wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: center;
+  justify-content: center;
 }
 .title-section {
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
   font-family: "Source Code Pro", monospace;
   color: $MidBlue;
   font-size: 48px;
@@ -64,6 +71,8 @@
   }
 }
 .project-texts-wrapper {
+  //margin-top: auto;
+  //padding: 10px;
   display: flex;
   justify-content: space-around;
   width: 90%;
@@ -90,7 +99,7 @@
   user-select: none;
   justify-content: center;
   @include sm-down {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 .proj-card-typed {
@@ -103,6 +112,6 @@
   user-select: none;
   justify-content: center;
   @include sm-down {
-    font-size: 24px;
+    font-size: 16px;
   }
 }

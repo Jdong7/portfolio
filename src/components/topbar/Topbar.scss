@@ -1,15 +1,22 @@
 @import "../../mixins";
-.Topbar *{
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
--webkit-tap-highlight-color: transparent;
+.Topbar {
+  position: sticky;
+  top: 0;
+  z-index: 55;
+}
+
+.Topbar * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .bar {
   height: 100px;
   width: 100%;
   display: flex;
   background-color: var(--Paper);
-  position: fixed;
-  z-index: 3;
+  position: sticky;
+  top: 0;
+  z-index: 33;
   border-bottom: 1px solid var(--MidBlue);
   transition: background-color 0.3s ease;
 }
@@ -101,7 +108,7 @@
 
 .menu {
   width: 200px;
-  height: 100%;
+  height: calc(100vh - 100px);
   position: fixed;
   right: 0;
   display: flex;
@@ -115,13 +122,14 @@
     width: 100% !important;
     right: auto;
     align-items: center;
-    margin-top: 100px;
+    //margin-top: 100px;
     height: 295px;
     transition: max-height 0.3s ease-out;
   }
 }
 .menuClosed {
   max-width: 0px;
+  max-height: 0px;
   @include sm-down {
     max-height: 0;
     max-width: 100%;
@@ -178,7 +186,7 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-a{
+a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }

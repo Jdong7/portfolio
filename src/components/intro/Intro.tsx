@@ -15,6 +15,10 @@ const Intro = () => {
       });
     }
   });
+
+  const scrollNext = () => {
+    
+  }
   return (
     <div className="Intro" id="Intro">
       <div className="wrapper">
