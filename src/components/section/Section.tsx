@@ -49,7 +49,7 @@ const Section = () => {
   });
 
   return (
-    <div className="Section" id="Section">
+    <div className="Section snap" id="Section">
       <div className="swiperCarousel">
         <Swiper
           navigation={true}

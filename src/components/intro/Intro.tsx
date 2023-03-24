@@ -16,11 +16,9 @@ const Intro = () => {
     }
   });
 
-  const scrollNext = () => {
-    
-  }
+  const scrollNext = () => {};
   return (
-    <div className="Intro" id="Intro">
+    <div className="Intro snap" id="Intro">
       <div className="wrapper">
         <div className="imgContainer">
           <div className="imgBorder">
