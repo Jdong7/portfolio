@@ -65,9 +65,9 @@
     font-size: 50px;
   }
   @include sm-down {
-    font-size: 25px;
-    margin: 5px;
-    padding: 5px;
+    font-size: 50px;
+    margin: 10px;
+    padding: 10px;
   }
 }
 .project-texts-wrapper {

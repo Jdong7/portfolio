@@ -4,7 +4,7 @@ import { Section } from "./components/section/Section";
 import { Topbar } from "./components/topbar/Topbar";
 import { useRef } from "react";
 import { Blank } from "./components/blankpage/Blank";
-import { Pin } from "./components/blankpage/Blank";
+import {useState, useEffect} from "react"
 function App() {
   // const snapDebounce = 600;
   // let snapIDTimeout: number | null = null;
@@ -29,34 +29,43 @@ function App() {
   //   }, snapDebounce);
   // });
 
-  const dummyData: Pin[] = [
-    {
-      name: "example1",
-      url: "URLEXAMPLE1",
-    },
-    {
-      name: "example2",
-      url: "URLEXAMPLE1",
-    },
-    {
-      name: "example3",
-      url: "URLEXAMPLE1",
-    },
-    {
-      name: "example4",
-      url: "URLEXAMPLE1",
-    },
-    {
-      name: "example5",
-      url: "URLEXAMPLE1",
-    },
-  ];
+  const sectionNames = ["intro","portfolio","works"]
+  const sections = sectionNames.length
+
+  const snapDebounce = 1000;
+
+  
+
+  let snapIDTimeout: number | null = null;
+
+  window.addEventListener("scroll", () => {
+    let distArray = []
+    for (let i = 0; i< sections;i++){
+      let diff = window.innerHeight*i -(100 *i)
+      distArray.push(diff)
+    }
+    const distMap = distArray.map(e => Math.abs(window.scrollY - e))
+    const min = Math.min(...distMap)
+    const snapIdx = distMap.indexOf(min)
+    //console.log(snapIdx)
+    if(snapIDTimeout !== null){
+      clearTimeout(snapIDTimeout)
+    }
+    const pos = distArray[snapIdx]
+
+    snapIDTimeout = setTimeout(()=>{
+      window.scrollTo({
+        behavior:"smooth",
+        top: pos,
+      });
+    },snapDebounce);
+  })
   return (
     <div className="App">
       <Topbar />
       <Intro />
       <Section />
-      <Blank pins={dummyData} />
+      <Blank/>
     </div>
   );
 }

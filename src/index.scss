@@ -1,3 +1,4 @@
+@import "./mixins.scss";
 :root {
   --MidBlue: #252a36;
   --Paper: #f2f1f0;
@@ -90,4 +91,17 @@ code {
 
 .fullH {
   height: 100%;
+}
+.hideMD{
+  @include md{
+    display: none;
+  
+  }
+
+}
+.hideSM{
+  @include sm-down{
+    display: none;
+   
+  }
 }

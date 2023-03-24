@@ -92,15 +92,15 @@ const Section = () => {
                     <i className="fa-brands fa-react"></i>
                   </div>
                   <div
-                    className="stack-icons"
+                    className="stack-icons hideSM"
                     style={{
                       color: "#41B883",
                     }}
                   >
-                    <i className="fa-brands fa-vuejs"></i>
+                    <i className="fa-brands fa-vuejs "></i>
                   </div>
                   <div
-                    className="stack-icons"
+                    className="stack-icons hideMD hideSM"
                     style={{
                       color: "#252a36",
                     }}
@@ -110,7 +110,7 @@ const Section = () => {
                 </div>
                 <div className="icon-section">
                   <div
-                    className="stack-icons"
+                    className="stack-icons hideSM"
                     style={{
                       color: "#252a36",
                     }}
@@ -134,7 +134,7 @@ const Section = () => {
                     <i className="fa-brands fa-java"></i>
                   </div>
                   <div
-                    className="stack-icons"
+                    className="stack-icons hideMD hideSM"
                     style={{
                       color: "#007FFF",
                     }}

@@ -4,24 +4,24 @@ import "./Topbar.scss";
 const sections = 3;
 
 const Topbar = () => {
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
+  // const [windowSize, setWindowSize] = useState([
+  //   window.innerWidth,
+  //   window.innerHeight,
+  // ]);
 
-  const snapHeight = () => {
-    //given a max height of h, and dist of s, round to the nearest (h/s)
-    let dist = windowSize[1];
-    let page = Math.trunc(window.scrollY / dist);
-    console.log(page, window.scrollY, dist);
-    window.scrollTo({
-      top: page * (windowSize[1] - 100),
-      behavior: "smooth",
-    });
+  // const snapHeight = () => {
+  //   //given a max height of h, and dist of s, round to the nearest (h/s)
+  //   let dist = windowSize[1];
+  //   let page = Math.trunc(window.scrollY / dist);
+  //   console.log(page, window.scrollY, dist);
+  //   window.scrollTo({
+  //     top: page * (windowSize[1] - 100),
+  //     behavior: "smooth",
+  //   });
   
-  };
+  // };
 
-  let setTimeoutID: number | null = null
+  // let setTimeoutID: number | null = null
   
 
   // window.addEventListener("scroll", () => {
@@ -30,33 +30,34 @@ const Topbar = () => {
   //   //   clearTimeout(setTimeoutID)
   //   // }
   //   // setTimeoutID = setTimeout(snapHeight,2000)
+  //   console.log(window.scrollY)
   // });
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-      //console.log("resized");
-    };
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     setWindowSize([window.innerWidth, window.innerHeight]);
+  //     //console.log("resized");
+  //   };
 
-    window.addEventListener("resize", handleWindowResize);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  });
+  //   window.addEventListener("resize", handleWindowResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowResize);
+  //   };
+  // });
 
   const [open, setOpen] = useState(true);
 
   const toggle = (event: React.MouseEvent<HTMLDivElement>) => {
     setOpen(!open);
   };
-  function goTop(pageNumber: number) {
-    //count from 0 to section-1
-    setOpen(!open);
-    window.scrollTo({
-      top: pageNumber * windowSize[1],
-      behavior: "smooth",
-    });
-  }
+  // function goTop(pageNumber: number) {
+  //   //count from 0 to section-1
+  //   setOpen(!open);
+  //   window.scrollTo({
+  //     top: pageNumber * windowSize[1],
+  //     behavior: "smooth",
+  //   });
+  // }
 
   return (
     <div className="Topbar" id="Topbar">
@@ -82,20 +83,10 @@ const Topbar = () => {
       </div>
 
       <div className={!open ? "menu menuOpen" : "menu menuClosed"}>
-        <div
-          className="item"
-          onClick={() => {
-            goTop(0);
-          }}
-        >
+        <div className="item" onClick={toggle}>
           <p>Intro</p>
         </div>
-        <div
-          className="item"
-          onClick={() => {
-            goTop(1);
-          }}
-        >
+        <div className="item" onClick={toggle}>
           <p>Portfolio</p>
         </div>
         <div className="item" onClick={toggle}>
