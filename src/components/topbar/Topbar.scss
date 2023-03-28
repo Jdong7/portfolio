@@ -1,4 +1,4 @@
-@import "../../mixins";
+@import "../../mixins.scss";
 .Topbar {
   position: sticky;
   top: 0;
@@ -22,6 +22,7 @@
 }
 .openbar {
   background-color: var(--MidBlue);
+  //border-bottom: 1px solid $Paper;
 }
 .left {
   display: flex;
@@ -125,6 +126,7 @@
     //margin-top: 100px;
     height: 295px;
     transition: max-height 0.3s ease-out;
+    border-top: 1px solid $Paper;
   }
 }
 .menuClosed {

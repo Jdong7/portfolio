@@ -1,63 +1,13 @@
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import "./Topbar.scss";
-
-const sections = 3;
+import { snapTo } from "../util/snap";
 
 const Topbar = () => {
-  // const [windowSize, setWindowSize] = useState([
-  //   window.innerWidth,
-  //   window.innerHeight,
-  // ]);
-
-  // const snapHeight = () => {
-  //   //given a max height of h, and dist of s, round to the nearest (h/s)
-  //   let dist = windowSize[1];
-  //   let page = Math.trunc(window.scrollY / dist);
-  //   console.log(page, window.scrollY, dist);
-  //   window.scrollTo({
-  //     top: page * (windowSize[1] - 100),
-  //     behavior: "smooth",
-  //   });
-  
-  // };
-
-  // let setTimeoutID: number | null = null
-  
-
-  // window.addEventListener("scroll", () => {
-   
-  //   // if (setTimeoutID !== null) {
-  //   //   clearTimeout(setTimeoutID)
-  //   // }
-  //   // setTimeoutID = setTimeout(snapHeight,2000)
-  //   console.log(window.scrollY)
-  // });
-
-  // useEffect(() => {
-  //   const handleWindowResize = () => {
-  //     setWindowSize([window.innerWidth, window.innerHeight]);
-  //     //console.log("resized");
-  //   };
-
-  //   window.addEventListener("resize", handleWindowResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleWindowResize);
-  //   };
-  // });
-
   const [open, setOpen] = useState(true);
-
-  const toggle = (event: React.MouseEvent<HTMLDivElement>) => {
+  const toggle = (event: React.MouseEvent<HTMLDivElement>,section:string) => {
     setOpen(!open);
+    section === "menu" ? null: snapTo(section)
   };
-  // function goTop(pageNumber: number) {
-  //   //count from 0 to section-1
-  //   setOpen(!open);
-  //   window.scrollTo({
-  //     top: pageNumber * windowSize[1],
-  //     behavior: "smooth",
-  //   });
-  // }
 
   return (
     <div className="Topbar" id="Topbar">
@@ -73,7 +23,7 @@ const Topbar = () => {
         <div className="right">
           <div
             className={open ? "hamburg" : "hamburg changed"}
-            onClick={toggle}
+            onClick={(e)=>toggle(e,"menu")}
           >
             <span className="line1"></span>
             <span className="line2"></span>
@@ -83,19 +33,19 @@ const Topbar = () => {
       </div>
 
       <div className={!open ? "menu menuOpen" : "menu menuClosed"}>
-        <div className="item" onClick={toggle}>
+        <div className="item" onClick={(e)=>toggle(e,"intro")}>
           <p>Intro</p>
         </div>
-        <div className="item" onClick={toggle}>
+        <div className="item" onClick={(e)=>toggle(e,"portfolio")}>
           <p>Portfolio</p>
         </div>
-        <div className="item" onClick={toggle}>
+        <div className="item" onClick={(e)=>toggle(e,"works")}>
           <p>Works</p>
         </div>
-        <div className="item" onClick={toggle}>
+        <div className="item" onClick={(e)=>toggle(e,"referrals")}>
           <p>Referrals</p>
         </div>
-        <div className="item" onClick={toggle}>
+        <div className="item" onClick={(e)=>toggle(e,"contact")}>
           <p>Contact</p>
         </div>
       </div>

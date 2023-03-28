@@ -1,6 +1,8 @@
 import "./Intro.scss";
 import { init } from "ityped";
 import React, { useEffect, useRef } from "react";
+import { snapTo } from "../util/snap";
+
 
 const Intro = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -15,8 +17,10 @@ const Intro = () => {
       });
     }
   });
+const chevClick = () =>{
+  snapTo("portfolio")
+}
 
-  const scrollNext = () => {};
   return (
     <div className="Intro snap" id="Intro">
       <div className="wrapper">
@@ -47,9 +51,9 @@ const Intro = () => {
             </a>
           </div>
         </div>
-        <a className="chev" href="#Section">
+        <div className="chev" onClick={chevClick}>
           <i className="fa-solid fa-chevron-down arrow"></i>
-        </a>
+        </div>
       </div>
     </div>
   );
